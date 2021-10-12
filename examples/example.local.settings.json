@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "GITHUB_EMAIL": "GITHUB_EMAIL",
+    "GITHUB_NAME": "GITHUB_NAME",
+    "GITHUB_TOKEN": "GITHUB_TOKEN"
+  }
+}
