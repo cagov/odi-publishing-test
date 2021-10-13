@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "playwright test -g \"publish\" ",
-    "test:headed": "playwright test --headed"
+    "test": "playwright test -g \"publish\" "
   },
   "eslintConfig": {
     "extends": [
