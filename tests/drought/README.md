@@ -1,13 +1,5 @@
 # Testing Drought
 
-# Soft Requirements
-
-Equivalents are absolutely fine, but the code examples assume the following locally:
-
-- [VS Code Shell Commands](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
-
-Suggestions for instructions using other editors or OS's are welcome.
-
 ## Directions
 
 - Set paths in terminal (optional)
@@ -34,16 +26,3 @@ Suggestions for instructions using other editors or OS's are welcome.
   `node $wtg/WordPressSync/debug.js`
 
 - Observe changes to [drought.ca.gov development branch](https://github.com/cagov/drought.ca.gov/tree/development) or see output from previous command.
-
-- Run test
-  `npm run test`
-
-## Test debugging
-
-- Add `PWDEBUG = 1` to `.env` to run tests through Playwright Inspector.
-
-- [Playwright Docs](https://playwright.dev/docs/debug)
-
-## @todo
-
-- Verify tests work on Windows machines
