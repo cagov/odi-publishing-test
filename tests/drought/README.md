@@ -20,4 +20,7 @@
 
 - Visit https://dev-drought-ca-gov.pantheonsite.io/ and make an edit.
 
-- Observe changes to [drought.ca.gov development branch](https://github.com/cagov/drought.ca.gov/tree/development)
+- Run Wordpress sync locally (Will run remotely once this test is more mature.)
+  `node $wtg/WordPressSync/debug.js`
+
+- Observe changes to [drought.ca.gov development branch](https://github.com/cagov/drought.ca.gov/tree/development) or see output from previous command.
