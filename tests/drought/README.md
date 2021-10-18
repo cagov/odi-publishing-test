@@ -28,6 +28,8 @@
 
 - ⚙️ Make sure [this project's config](https://github.com/cagov/drought.ca.gov/blob/development/wordpress/wordpress-to-github.config.json) is correct.
 
+  **⚠️⚠️ONLY MAKE THIS CHANGE ON THE `development` BRANCH.⚠️⚠️**
+
   `"disabled": false,`
 
   `"wordpress_source_url": "https://dev-drought-ca-gov.pantheonsite.io",`

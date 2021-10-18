@@ -29,8 +29,7 @@ test.describe.serial('suite', () => {
   // Check if published.
   test('checkIfPublished', async ({ page }) => {
     await page.goto(`${configDrought.dev.urlViewing}/${configWP.stringTitle}`);
-    expect('.page-title').toContainText(configWP.stringTitle);
-    await page.pause();
+    await expect(page.locator('.page-title')).toContainText(configWP.stringTitle);
   });
 
   // Delete.
