@@ -36,10 +36,6 @@
 
   (remotely)
 
-- ⚙️ Enable Notifications on WordPress
-
-  `https://dev-drought-ca-gov.pantheonsite.io/wp-admin/edit.php?post_type=notification`
-
 - Visit https://dev-drought-ca-gov.pantheonsite.io/ and make an edit.
 
 - Run Wordpress sync locally (Will run remotely once this test is more mature.)
@@ -47,3 +43,11 @@
   `node $wtg/WordPressSync/debug.js`
 
 - Observe changes to [drought.ca.gov development branch](https://github.com/cagov/drought.ca.gov/tree/development) or see output from previous command.
+
+<!-- @todo
+
+## Directions - Option 2 - WordPress Notifications Trigger
+
+- ⚙️ Enable Notifications on WordPress
+
+  `https://dev-drought-ca-gov.pantheonsite.io/wp-admin/edit.php?post_type=notification` -->
