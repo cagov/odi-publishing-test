@@ -1,0 +1,28 @@
+{
+  "$schema": "https://github.com/cagov/wordpress-to-github/blob/sandbox-testing/WordpressSync/endpoints.schema.json",
+  "meta": {
+    "title": "endpoints config file",
+    "description": "endpoints config file"
+  },
+  "data": {
+    "projects": [
+      {
+        "name": "dev-sand",
+        "description": "Sandbox",
+        "enabled": false,
+        "enabledLocal": true,
+        "ReportingChannel_Slack": "",
+        "WordPressSource": {
+          "url": "https://dev-sand-ca-gov.pantheonsite.io",
+          "tags_exclude": ["staging"]
+        },
+        "GitHubTarget": {
+          "Owner": "cagov",
+          "Repo": "odi-publishing-11ty-sandbox",
+          "Branch": "development",
+          "ConfigPath": "wordpress/wordpress-to-github.config.json"
+        }
+      }
+    ]
+  }
+}
