@@ -24,9 +24,11 @@ For the purposes of this repo, use the wordpress-to-github's `sandbox-testing` t
 
     (locally - do not commit)
 
-  - c. Make sure [the target wordpress site's config](https://github.com/cagov/odi-publishing-11ty-sandbox/blob/development/wordpress/config/wordpress-to-github.config.json) is correct.
+  - c. Make sure [the target static site's config]
 
-  **⚠️⚠️ONLY MAKE THIS CHANGE ON THE `development` BRANCH.⚠️⚠️**
+  (https://github.com/cagov/odi-publishing-11ty-sandbox/blob/development/wordpress/config/wordpress-to-github.config.json) is correct.
+
+  **⚠️⚠️ WAITING FOR [CODE MERGE](https://github.com/cagov/odi-publishing-11ty-sandbox/pull/5/files)! - to main and then to development ONLY MAKE THIS CHANGE ON THE `development` BRANCH.⚠️⚠️**
 
   `"disabled": false,`
 
@@ -42,13 +44,13 @@ For the purposes of this repo, use the wordpress-to-github's `sandbox-testing` t
 
   (locally)
 
-- Visit https://dev-drought-ca-gov.pantheonsite.io/ and make an edit.
+- Visit https://dev-sand-ca-gov.pantheonsite.io/ and make an edit.
 
 - Run Wordpress sync locally (Will run remotely once this test is more mature.)
 
   `node $wtg/WordPressSync/debug.js`
 
-- Observe changes to [drought.ca.gov development branch](https://github.com/cagov/drought.ca.gov/tree/development) or see output from previous command.
+- Observe changes to [sandbox development branch](https://github.com/cagov/odi-publishing-11ty-sandbox) or see output from previous command.
 
 <!-- @todo
 
