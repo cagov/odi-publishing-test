@@ -2,11 +2,9 @@
 
 ## Directions for local
 
-For the purposes of this repo, use the wordpress-to-github's `sandbox-testing` tag
-
 - 1. Set paths in terminal (optional)
 
-  `wtg=~/Sites/wordpress-to-github`
+  `wtg=~/Sites/odi-publisher`
 
   `odt=~/Sites/odi-publishing-test`
 
@@ -27,14 +25,6 @@ For the purposes of this repo, use the wordpress-to-github's `sandbox-testing` t
   - c. Make sure [the target static site's config]
 
   (https://github.com/cagov/odi-publishing-11ty-sandbox/blob/development/wordpress/config/wordpress-to-github.config.json) is correct.
-
-  **⚠️⚠️ WAITING FOR [CODE MERGE](https://github.com/cagov/odi-publishing-11ty-sandbox/pull/5/files)! - to main and then to development ONLY MAKE THIS CHANGE ON THE `development` BRANCH.⚠️⚠️**
-
-  `"disabled": false,`
-
-  `"wordpress_source_url": "https://dev-drought-ca-gov.pantheonsite.io",`
-
-  `"outputBranch": "development",`
 
   (remotely)
 
