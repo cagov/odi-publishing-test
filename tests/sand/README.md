@@ -24,7 +24,7 @@
 
   - c. Make sure [the target static site's config]
 
-  (https://github.com/cagov/odi-publishing-11ty-sandbox/blob/development/wordpress/config/wordpress-to-github.config.json) is correct.
+  (https://github.com/cagov/odi-publishing-11ty-sandbox/blob/main/wordpress/config/wordpress-to-github.config.json) is correct.
 
   (remotely)
 
@@ -34,7 +34,7 @@
 
   (locally)
 
-- Visit https://dev-sand-ca-gov.pantheonsite.io/ and make an edit.
+- npm run test.
 
 - Run Wordpress sync locally (Will run remotely once this test is more mature.)
 
@@ -48,4 +48,4 @@
 
 - ⚙️ Enable Notifications on WordPress
 
-  `https://dev-drought-ca-gov.pantheonsite.io/wp-admin/edit.php?post_type=notification` -->
+  `https://dev-sand-ca-gov.pantheonsite.io/wp-admin/edit.php?post_type=notification` -->

@@ -8,8 +8,6 @@ Testing suite for the ODI Publishing system.
 
 `npm run test`
 
-See [Testing Drought README.md](/test/drought/README.md) for further instructions.
-
 ## Soft Requirements
 
 Equivalents are absolutely fine, but the code examples assume the following locally:
@@ -26,9 +24,11 @@ Suggestions for instructions using other editors or OS's are welcome.
 
 ## Use the code generator
 
-- `site=dev-drought-ca-gov.pantheonsite.io`
+- `site=dev-sand-ca-gov.pantheonsite.io`
 
-- `npx playwright codegen $site`
+<!-- - `npx playwright codegen $site --save-storage=auth.json` -->
+
+- `npx playwright codegen --load-storage=auth.json $site`
 
 ## @todo
 

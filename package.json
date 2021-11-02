@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "playwright test",
+    "test:menus": "playwright test -g \"menus\" ",
     "test:publish": "playwright test -g \"publish\" ",
     "test:check-published": "playwright test -g \"checkIfPublished\" "
   },
