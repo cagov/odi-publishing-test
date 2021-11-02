@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { test } from '@playwright/test';
 import configSite from './sand/config.js';
 import configWP from './wp/config.js';
 
@@ -14,10 +14,7 @@ test('menus', async ({ page }) => {
   await page.goto(`${configSite.dev.urlEditing}/wp-admin/nav-menus.php?action=edit&menu=8`);
 
   // Select the main menu.
-  await Promise.all([
-    page.waitForNavigation(/* { url: 'https://dev-sand-ca-gov.pantheonsite.io/wp-admin/nav-menus.php?action=edit&menu=8' } */),
-    page.click('input:has-text("Select")'),
-  ]);
+  await Promise.all([page.waitForNavigation(), page.click('input:has-text("Select")')]);
   await page.click('text=Custom Links Press return or enter to open this section');
 
   // Fill in the menu item name.
@@ -30,17 +27,8 @@ test('menus', async ({ page }) => {
 
   // Add item to main menu.
   await page.click('input[name="add-custom-menu-item"]');
-  await page.click('.menu-item:last-child a.item-edit');
+  await page.waitForSelector(`text="Menu-${configWP.stringTitle}"`);
 
-  // Wait for menu to appear. @todo Make this work.
-  await page.waitForSelector(`.menu-edit input[value="Menu-${configWP.stringTitle}"]`);
-
-  // Save the menu.
-  await Promise.all([
-    page.waitForNavigation(),
-    page.click('text=Delete Menu Save Menu >> input[name="save_menu"]'),
-  ]);
-
-  // @todo Optional - test if `Menu-${configWP.stringTitle}` exists at `/wp-json/menus/v1`.
-  // In Cypress, this is cy.readFile()
+  // Save menu.
+  await page.click('text=Delete Menu Save Menu >> input[name="save_menu"]');
 });
