@@ -31,4 +31,7 @@ test('menus', async ({ page }) => {
 
   // Save menu.
   await page.click('text=Delete Menu Save Menu >> input[name="save_menu"]');
+
+  // @todo Test for menu item on viewing site.
+  // @todo Delete the menu item.
 });

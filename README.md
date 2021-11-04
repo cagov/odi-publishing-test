@@ -33,3 +33,4 @@ Suggestions for instructions using other editors or OS's are welcome.
 ## @todo
 
 - Verify tests work on Windows machines.
+- Add steps to delete content created via test.
