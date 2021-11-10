@@ -51,6 +51,8 @@ Pantheon code: https://github.com/cagov/pantheon-mirror-sand-ca-gov (see [readme
 
 GitHub repo: odi-publishing-11ty-sandbox
 
+Primary git branch: `main`
+
 Project config: ./odi-publishing/odi-publishing.json
 
 Wordpress-to-github config: ./wordpress/config/wordpress-to-github.config.json
