@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import configSite from './sand/config.js';
+import configSite from '../config.js';
 import configWP from './wp/config.js';
 
 test.describe.serial('posts', () => {
