@@ -18,6 +18,7 @@ test('menus', async ({ page }) => {
   await page.click('text=Custom Links Press return or enter to open this section');
 
   // Fill in the menu item name.
+  // @todo - this [-19] part of this input varies, which breaks this test.
   await page.click('input[name="menu-item[-19][menu-item-title]"]');
   await page.fill('input[name="menu-item[-19][menu-item-title]"]', `Menu-${configWP.stringTitle}`);
 
