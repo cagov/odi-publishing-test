@@ -29,13 +29,13 @@ test.describe.serial('posts', () => {
     ]);
     await page.click(`a:has-text("${variablesWP.stringTitle}")`);
     await expect(page).toHaveURL(`${configSite.dev.urlEditing}/${variablesWP.stringTitle}/`);
+  });
 
+  test('see-posts', async ({ page }) => {
     // Open viewing(headless) URL. Check if published.
     console.info(`Trying to reach ${pageViewing}...`);
     console.info(`View GitHub progress at ${configSite.dev.actionsLog}`);
-    await page.goto(pageViewing, {
-      timeout: 120000,
-    });
+    await page.goto(pageViewing);
     await expect(page.locator('.page-title')).toContainText(variablesWP.stringTitle);
 
     // @todo Delete post when test is done.

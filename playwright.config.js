@@ -1,10 +1,12 @@
 const config = {
+  retries: 2,
+  video: 'on',
+  timeout: 180000,
   use: {
-    headless: false,
-    viewport: { width: 1720, height: 1720 },
-    ignoreHTTPSErrors: true,
-    video: 'on-first-retry',
-    retries: 6,
+    headless: true,
+    viewport: { width: 1020, height: 1720 },
+    ignoreHTTPSErrors: false,
+    trace: 'on',
   },
 };
 
