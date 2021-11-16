@@ -1,12 +1,12 @@
 import { test } from '@playwright/test';
 import configSite from '../config.js';
-import configWP from './wp/config.js';
+import variablesWP from './wp/variables.js';
 
 test('menus', async ({ page }) => {
   // Login.
-  await page.goto(configSite.dev.urlEditing + configWP.pathLogin);
-  await page.fill(configWP.selectorLogin, configWP.username);
-  await page.fill(configWP.selectorPass, configWP.password);
+  await page.goto(configSite.dev.urlEditing + variablesWP.pathLogin);
+  await page.fill(variablesWP.selectorLogin, variablesWP.username);
+  await page.fill(variablesWP.selectorPass, variablesWP.password);
   await page.click('[aria-label="Show password"]');
   await page.click('[type=Submit]');
 
@@ -20,15 +20,18 @@ test('menus', async ({ page }) => {
   // Fill in the menu item name.
   // @todo - this [-19] part of this input varies, which breaks this test.
   await page.click('input[name="menu-item[-19][menu-item-title]"]');
-  await page.fill('input[name="menu-item[-19][menu-item-title]"]', `Menu-${configWP.stringTitle}`);
+  await page.fill(
+    'input[name="menu-item[-19][menu-item-title]"]',
+    `Menu-${variablesWP.stringTitle}`,
+  );
 
   // Fill in the menu item url.
   await page.click('[placeholder="https://"]');
-  await page.fill('[placeholder="https://"]', `/menu-${configWP.stringTitle}`);
+  await page.fill('[placeholder="https://"]', `/menu-${variablesWP.stringTitle}`);
 
   // Add item to main menu.
   await page.click('input[name="add-custom-menu-item"]');
-  await page.waitForSelector(`text="Menu-${configWP.stringTitle}"`);
+  await page.waitForSelector(`text="Menu-${variablesWP.stringTitle}"`);
 
   // Save menu.
   await page.click('text=Delete Menu Save Menu >> input[name="save_menu"]');
