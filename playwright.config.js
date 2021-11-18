@@ -1,3 +1,5 @@
+// Sets values for the Playwright test and context.
+
 // Set a random number in a cookie for reuse.
 const titleSlug = Math.floor(Math.random(999) * 999);
 const stringTitle = `test-${titleSlug}`;

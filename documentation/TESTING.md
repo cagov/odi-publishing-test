@@ -1,15 +1,21 @@
-# Local Testing 
+# Local testing 
 
+## Essential configuration
 1. Copy .env and change values to the WordPress username and password that will be creating content. 
 
     `cp ./examples/example.env ./.env`
     `code ./.env`
 
-2. Change Editing and Viewing URL in config.js.
+## Optional configuration
+2. Modify editing and Viewing URL according to your pipeline needs.
 
-    `code ./config.js`
+    `code ./configSites.js`
 
-3. Run scripts.
+3. Change test and browser configuration. This file is also useful for returning values from function that should only run once per test suite. 
+
+    `code ./playwright.config.js`
+
+## NPM scripts
 
     | Script | Description |
     | -------- | ----- |

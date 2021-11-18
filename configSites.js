@@ -1,4 +1,4 @@
-const configSite = {
+const configSites = {
   dev: {
     urlEditing: 'https://dev-sand-ca-gov.pantheonsite.io',
     urlViewing: 'http://development.sand.ca.gov.s3-website-us-west-1.amazonaws.com',
@@ -6,4 +6,4 @@ const configSite = {
   },
 };
 
-export default configSite;
+export default configSites;

@@ -4,7 +4,7 @@ dotenv.config();
 
 // @todo It would better if this increments but this will get us started.
 
-const variablesWP = {
+const variables = {
   pathLogin: '/wp-login.php',
   selectorLogin: '#user_login',
   selectorPass: '#user_pass',
@@ -12,4 +12,4 @@ const variablesWP = {
   password: process.env.PW,
 };
 
-export default variablesWP;
+export default variables;

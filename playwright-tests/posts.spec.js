@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
-import configSite from '../config.js';
-import variablesWP from './wp/variables.js';
+import configSite from '../configSites.js';
+import variablesWP from './variables.js';
 
 test.describe.serial('posts', () => {
   // Create and publish.

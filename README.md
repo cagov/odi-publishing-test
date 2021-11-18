@@ -8,7 +8,7 @@ Testing suite for the ODI Publishing system.
 
 `npm run test`
 
-- See [TESTING](./documentation/TESTING.md) for further details
+- See [TESTING](./documentation/TESTING.md) for detailed information.
 
 
 ## Other Infomration
@@ -20,17 +20,9 @@ Equivalents are absolutely fine, but the code examples assume the following loca
 
 Suggestions for instructions using other editors or OS's are welcome.
 
-### Test debugging
+### Developing Tests
 
-- Add `PWDEBUG = 1` to `.env` to run tests through Playwright Inspector.
-
-- [Playwright Docs](https://playwright.dev/docs/debug)
-
-### Use the code generator
-
-- `site=dev-sand-ca-gov.pantheonsite.io`
-
-- `npx playwright codegen $site`
+See [Playwright Testing](https://github.com/cagov/odi-engineering/blob/playwright-docs/playwright.md)
 
 ## Testing Pipeline Architecture:
 
