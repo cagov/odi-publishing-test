@@ -7,7 +7,8 @@
   "scripts": {
     "test": "playwright test",
     "test:menus": "playwright test -g \"menus\" ",
-    "test:posts": "playwright test -g \"posts\" "
+    "test:posts": "playwright test -g \"posts\" ",
+    "test:posts:headed": "playwright test --headed -g \"posts\" "
   },
   "eslintConfig": {
     "extends": [
@@ -26,7 +27,8 @@
   "homepage": "https://github.com/cagov/odi-publishing-test#readme",
   "dependencies": {
     "@playwright/test": "^1.15.2",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "node-fetch": "^3.1.0"
   },
   "devDependencies": {
     "@open-wc/eslint-config": "^4.3.0",

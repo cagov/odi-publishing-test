@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
+// import { check } from 'prettier';
 import configSite from './sand/config.js';
 import configWP from './wp/config.js';
+import checkFor200Response from './includes/check-for-200.js'
 
 test.describe.serial('posts', () => {
   // Create and publish.
@@ -36,7 +38,10 @@ test.describe.serial('posts', () => {
 
   // Open viewing(headless) URL. Check if published.
   test('checkIfPublished', async ({ page }) => {
-    await page.goto(`${configSite.dev.urlViewing}/${configWP.stringTitle}`);
+    test.setTimeout(300000); // 5 minute timeout to accommodate publishing, build, deploy
+    const viewUrl = `${configSite.dev.urlViewing}/${configWP.stringTitle}`;
+    await checkFor200Response(viewUrl)
+    await page.goto(viewUrl);
     await expect(page.locator('.page-title')).toContainText(configWP.stringTitle);
   });
 
