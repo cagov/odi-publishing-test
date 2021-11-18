@@ -1,3 +1,7 @@
+// Set a random number in a cookie for reuse.
+const titleSlug = Math.floor(Math.random(999) * 999);
+const stringTitle = `test-${titleSlug}`;
+
 const config = {
   retries: 2,
   timeout: 180000,
@@ -7,6 +11,16 @@ const config = {
     ignoreHTTPSErrors: false,
     trace: 'on',
     video: 'on',
+    storageState: {
+      cookies: [
+        {
+          name: 'stringTitle',
+          value: stringTitle,
+          domain: 'arbritrary',
+          path: '/',
+        },
+      ],
+    },
   },
 };
 
