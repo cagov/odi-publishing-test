@@ -22,3 +22,4 @@
     | `test` | Runs all `tests/*.spec.js` files. |
     | `test:menus` | Creates a single menu item in WordPress. (needs work)|
     | `test:posts` | Creates a single post in WordPress and tests for it on the headless endpoint.|
+    | `test:posts:headed` | `test:posts` run in a non-virtual brower.|

@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import configSite from '../configSites.js';
-import variablesWP from './variables.js';
+import variablesWP from './includes/variables.js';
 
 test('menus', async ({ page }) => {
   // Login.

@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import configSite from '../configSites.js';
-import variablesWP from './variables.js';
+import variablesWP from './includes/variables.js';
 import checkFor200Response from './includes/check-for-200.js';
 
 test.describe.serial('posts', () => {
@@ -8,7 +8,6 @@ test.describe.serial('posts', () => {
   test('publish-posts', async ({ page, context }) => {
     // Get Random string from cookie.
     const stringTitle = (await context.storageState()).cookies[0].value;
-    console.log(stringTitle);
 
     // Login.
     await page.goto(configSite.dev.urlEditing + variablesWP.pathLogin);
@@ -32,6 +31,8 @@ test.describe.serial('posts', () => {
     ]);
     await page.click(`a:has-text("${stringTitle}")`);
     await expect(page).toHaveURL(`${configSite.dev.urlEditing}/${stringTitle}/`);
+
+    console.log(`Post created with title: ${stringTitle}`);
   });
 
   test('see-posts', async ({ page, context }) => {
@@ -42,11 +43,11 @@ test.describe.serial('posts', () => {
     // Open viewing(headless) URL. Check if published.
     test.setTimeout(300000); // 5 minute timeout to accommodate publishing, build, deploy.
     await page.goto(pageViewing);
-    console.info(`Trying to reach ${pageViewing}...`);
     console.info(`View GitHub progress at ${configSite.dev.actionsLog}`);
     await checkFor200Response(pageViewing);
     await page.goto(pageViewing);
-    await expect(page.locator('.page-title')).toContainText(configWP.stringTitle);
+    console.info(`Testing for string match at ${pageViewing}...`);
+    await expect(page.locator('.page-title')).toContainText(stringTitle);
 
     // @todo Delete post when test is done.
   });

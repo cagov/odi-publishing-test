@@ -22,7 +22,7 @@ Suggestions for instructions using other editors or OS's are welcome.
 
 ### Developing Tests
 
-See [Playwright Testing](https://github.com/cagov/odi-engineering/blob/playwright-docs/playwright.md)
+See [Playwright Testing](https://github.com/cagov/odi-engineering/blob/playwright-docs/playwright.md) and [Writing Unit Tests](https://github.com/cagov/design-system/blob/main/unit-tests.md#delays-for-visual-review) for advice and code examples. 
 
 ## Testing Pipeline Architecture:
 
