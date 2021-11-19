@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import configSite from '../configSites.js';
 import variablesWP from './variables.js';
+import checkFor200Response from './includes/check-for-200.js';
 
 test.describe.serial('posts', () => {
   // Create and publish.
@@ -39,10 +40,13 @@ test.describe.serial('posts', () => {
     const pageViewing = `${configSite.dev.urlViewing}/${stringTitle}`;
 
     // Open viewing(headless) URL. Check if published.
+    test.setTimeout(300000); // 5 minute timeout to accommodate publishing, build, deploy.
+    await page.goto(pageViewing);
     console.info(`Trying to reach ${pageViewing}...`);
     console.info(`View GitHub progress at ${configSite.dev.actionsLog}`);
+    await checkFor200Response(pageViewing);
     await page.goto(pageViewing);
-    await expect(page.locator('.page-title')).toContainText(stringTitle);
+    await expect(page.locator('.page-title')).toContainText(configWP.stringTitle);
 
     // @todo Delete post when test is done.
   });
