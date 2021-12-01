@@ -7,6 +7,7 @@
   "scripts": {
     "test": "playwright test",
     "test:menus": "playwright test playwright-tests/menus.spec.js",
+    "test:menus:headed": "playwright test --headed  playwright-tests/menus.spec.js",
     "test:posts": "playwright test playwright-tests/posts.spec.js",
     "test:posts:headed": "playwright test --headed  playwright-tests/posts.spec.js"
   },
