@@ -3,7 +3,7 @@ import delay from './delay.js';
 
 export default function checkFor200Response(url) {
   return new Promise(async (resolveTop) => {
-    console.log(`checking for title at ${url}`);
+    console.log(`Checking for response at ${url}`);
 
     function checkFor200ResponseAWS(url) {
       return new Promise(async (resolveInternal) => {

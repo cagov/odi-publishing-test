@@ -40,17 +40,17 @@ test.describe.serial('posts', () => {
   });
 
   test('see-posts', async ({ page, context }) => {
+    // We get the title from a cookie set at the beginning of the suite.
     const stringTitle = (await context.storageState()).cookies[0].value;
-    console.log(`💡 -- String to check for: ${stringTitle}`);
-    const pageViewing = `${pipeline.urlViewing}/${stringTitle}`;
-
+    const pageViewing = `${pipeline.urlViewing}${pipeline.postPrefix}/${stringTitle}`;
+ 
     // Open viewing(headless) URL. Check if published.
     test.setTimeout(variablesWP.timeout ? (parseInt(variablesWP.timeout)) : 30000 ); // 5 minute timeout to accommodate publishing, build, deploy.
     await page.goto(pageViewing);
     console.info(`💡 -- View GitHub progress at ${pipeline.actionsLog}`);
+    console.info(`💡 -- Testing for '${stringTitle}' at ${pageViewing}...`);
     await checkFor200Response(pageViewing);
     await page.goto(pageViewing);
-    console.info(`💡 -- Testing for string match at ${pageViewing}...`);
     await expect(page.locator('.page-title')).toContainText(stringTitle);
 
     // @todo Delete post when test is done.
