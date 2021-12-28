@@ -43,7 +43,7 @@ test.describe.serial('posts', () => {
     const pageViewing = `${pipeline.urlViewing}/${stringTitle}`;
 
     // Open viewing(headless) URL. Check if published.
-    test.setTimeout(300000); // 5 minute timeout to accommodate publishing, build, deploy.
+    test.setTimeout(variablesWP.timeout ? variablesWP.timeout : 30000 ); // 5 minute timeout to accommodate publishing, build, deploy.
     await page.goto(pageViewing);
     console.info(`View GitHub progress at ${pipeline.actionsLog}`);
     await checkFor200Response(pageViewing);

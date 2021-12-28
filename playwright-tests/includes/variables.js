@@ -9,6 +9,7 @@ const variables = {
   username: process.env.UN,
   password: process.env.PW,
   pipeline: process.env.PIPELINE,
+  timeout: process.env.TIMEOUT,
 };
 
 export default variables;
