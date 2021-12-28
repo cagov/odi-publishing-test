@@ -1,7 +1,9 @@
 import { expect, test } from '@playwright/test';
-import configSite from '../configSites.js';
+import pipelines from '../pipelines.js';
 import variablesWP from './includes/variables.js';
 import checkFor200Response from './includes/check-for-200.js';
+
+const pipeline = pipelines[variablesWP.pipeline];
 
 test.describe.serial('posts', () => {
   // Create and publish.
@@ -10,7 +12,7 @@ test.describe.serial('posts', () => {
     const stringTitle = (await context.storageState()).cookies[0].value;
 
     // Login.
-    await page.goto(configSite.dev.urlEditing + variablesWP.pathLogin);
+    await page.goto(pipeline.urlEditing + variablesWP.pathLogin);
     await page.fill(variablesWP.selectorLogin, variablesWP.username);
     await page.fill(variablesWP.selectorPass, variablesWP.password);
     await page.click('[aria-label="Show password"]');
@@ -30,7 +32,7 @@ test.describe.serial('posts', () => {
       page.click('[aria-label="Editor publish"] >> text=Publish'),
     ]);
     await page.click(`a:has-text("${stringTitle}")`);
-    await expect(page).toHaveURL(`${configSite.dev.urlEditing}/${stringTitle}/`);
+    await expect(page).toHaveURL(`${pipeline.urlEditing}${pipeline.postPrefix}/${stringTitle}/`);
 
     console.log(`Post created with title: ${stringTitle}`);
   });
@@ -38,12 +40,12 @@ test.describe.serial('posts', () => {
   test('see-posts', async ({ page, context }) => {
     const stringTitle = (await context.storageState()).cookies[0].value;
     console.log(stringTitle);
-    const pageViewing = `${configSite.dev.urlViewing}/${stringTitle}`;
+    const pageViewing = `${pipeline.urlViewing}/${stringTitle}`;
 
     // Open viewing(headless) URL. Check if published.
     test.setTimeout(300000); // 5 minute timeout to accommodate publishing, build, deploy.
     await page.goto(pageViewing);
-    console.info(`View GitHub progress at ${configSite.dev.actionsLog}`);
+    console.info(`View GitHub progress at ${pipeline.actionsLog}`);
     await checkFor200Response(pageViewing);
     await page.goto(pageViewing);
     console.info(`Testing for string match at ${pageViewing}...`);
