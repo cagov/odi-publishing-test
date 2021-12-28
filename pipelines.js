@@ -15,7 +15,7 @@ const pipelines = {
     postPrefix: '',
   },
   cannabis_test: {
-    urlEditing: 'https://test-cannabis-ca-gov.pantheonsite.io/',
+    urlEditing: 'https://test-cannabis-ca-gov.pantheonsite.io',
     urlViewing: 'http://test.cannabis.ca.gov.s3-website-us-west-1.amazonaws.com',
     actionsLog: 'https://github.com/cagov/cannabis.ca.gov/actions',
     postPrefix: today
