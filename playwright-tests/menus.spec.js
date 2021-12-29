@@ -4,7 +4,11 @@ import variablesWP from './includes/variables.js';
 
 const pipeline = pipelines[variablesWP.pipeline];
 
-test('menus', async ({ page }) => {
+test('menus', async ({ page, context }) => {
+  
+  // Get Random string from cookie.
+  const stringTitle = (await context.storageState()).cookies[0].value;
+
   // Login.
   await page.goto(pipeline.urlEditing + variablesWP.pathLogin);
   await page.fill(variablesWP.selectorLogin, variablesWP.username);
@@ -15,21 +19,21 @@ test('menus', async ({ page }) => {
   // Go to menu page.
   await page.goto(`${pipeline.urlEditing}/wp-admin/nav-menus.php?action=edit&menu=8`);
 
-  // Select the main menu.
+  // Select the default menu.
   await Promise.all([page.waitForNavigation(), page.click('input:has-text("Select")')]);
   await page.click('text=Custom Links Press return or enter to open this section');
 
   // Fill in the menu item name.
-  await page.click('#custom-menu-item-url');
-  await page.fill('#custom-menu-item-url', `Menu-${variablesWP.stringTitle}`);
+  await page.click('#custom-menu-item-name');
+  await page.fill('#custom-menu-item-name', `menu-${stringTitle}`);
 
   // Fill in the menu item url.
   await page.click('[placeholder="https://"]');
-  await page.fill('[placeholder="https://"]', `/menu-${variablesWP.stringTitle}`);
+  await page.fill('[placeholder="https://"]', `/menu-${stringTitle}`);
 
   // Add item to main menu.
   await page.click('input[name="add-custom-menu-item"]');
-  await page.waitForSelector(`text="Menu-${variablesWP.stringTitle}"`);
+  await page.waitForSelector(`text="menu-${stringTitle}"`);
 
   // Save menu.
   await page.click('text=Delete Menu Save Menu >> input[name="save_menu"]');
