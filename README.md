@@ -4,7 +4,7 @@ Testing suite for the ODI Publishing system.
 
 ## Getting started
 
-`npm install`
+- `npm install`
 
 - See [TESTING](./documentation/TESTING.md) for detailed information.
 
@@ -17,8 +17,8 @@ Testing suite for the ODI Publishing system.
 
 ## Developing Tests
 
-ODI's [Playwright Testing](https://github.com/cagov/odi-engineering/blob/playwright-docs/playwright.md) and [Writing Unit Tests](https://github.com/cagov/design-system/blob/main/unit-tests.md#delays-for-visual-review) have plenty of advice and code examples. 
+- ODI's [Playwright Testing](https://github.com/cagov/odi-engineering/blob/playwright-docs/playwright.md) and [Writing Unit Tests](https://github.com/cagov/design-system/blob/main/unit-tests.md#delays-for-visual-review) have plenty of advice and code examples. 
 
 ## Roadmap
 
-See [Testing issues](https://github.com/cagov/odi-engineering/labels/Testing)
+- See [Testing issues](https://github.com/cagov/odi-engineering/labels/Testing)
