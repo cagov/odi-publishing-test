@@ -44,7 +44,7 @@ test.describe.serial('menus', () => {
   test('see-menu', async ({ page, context }) => {
     const pageViewing = `${pipeline.urlViewing}`;
     const delayInSeconds = 3 * 60;
-    const maxTries = 4;
+    const maxTries = 10;
 
     // We get the title from a cookie set at the beginning of the suite.
     const stringTitle = (await context.storageState()).cookies[0].value;
