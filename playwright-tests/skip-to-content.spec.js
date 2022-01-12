@@ -10,19 +10,24 @@ test.describe('skipt to content', () => {
   test('skip', async ({ page }) => {
     const pageViewing = 'http://localhost:8080';
 
-    const pathsToTest = [
-      // { landing: '' }, // landing.njk
-      { event: '2021/12/06/cannabis-advisory-committee-meeting/index.html' }, // event.njk
-      { page: 'resources/rulemaking/index.html' }, // page.njk
-      { post: '2021/12/21/department-of-cannabis-control-files-emergency-regulations-for-equity-fee-waivers-public-comment-period-begins-today/index.html' }, // post.njk
-      { pressRelease: '2021/12/21/californias-cannabis-department-seeks-members-for-cannabis-advisory-committee/index.html' }, // press-release.njk
-      { singleColunWide: 'about-us/dcc-events/index.html' }, // single-column-wide.njk
-      { search: 'serp/index.html?q=cannabis' }, // search.njk
-      { singleColumn: 'about-us/announcements/index.html' }, // single-column.njk
+    const pagesToTest = [
+      { landing: '' }, // landing.njk
+      { event: '2021/12/06/cannabis-advisory-committee-meeting/' }, // event.njk
+      { page: 'resources/rulemaking/' }, // page.njk
+      { post: '2022/01/05/californias-cannabis-department-awards-nearly-100-million-in-grants-to-local-governments/' }, // post.njk
+      { pressRelease: '2021/12/20/california-to-offer-financial-support-for-cannabis-equity-businesses-through-fee-waivers/' }, // press-release.njk
+      { singleColunWide: 'about-us/dcc-events/' }, // single-column-wide.njk
+      { search: 'serp/?q=cannabis' }, // search.njk
+      { singleColumn: 'about-us/announcements/' }, // single-column.njk
     ];
 
-    for (const path of pathsToTest) {
-      await page.goto(`${pageViewing}/${Object.values(path)}`);
+    for (const pageToTest of pagesToTest) {
+      // Set variables.
+      const label = Object.keys(pageToTest)[0];
+      const path = Object.values(pageToTest)[0];
+
+      // Go to page.
+      await page.goto(`${pageViewing}/${path}`);
 
       // Focus skip to contnet.
       await page.focus('#skip-to-content a');
@@ -34,7 +39,7 @@ test.describe('skipt to content', () => {
       await page.keyboard.press('Tab');
 
       // Take a screen shot.
-      await page.screenshot({ path: `test-results/screenshots/${Object.keys(path)}.png` });
+      await page.screenshot({ path: `test-results/screenshots/${label}.png` });
     }
   });
 });
