@@ -4,32 +4,26 @@ Testing suite for the ODI Publishing system.
 
 ## Getting started
 
-`npx playwright install`
-
-`npm run test`
+- `npm install`
 
 - See [TESTING](./documentation/TESTING.md) for detailed information.
 
 
-## Other Infomration
-### Soft Requirements
+## Testing Pipelines:
 
-Equivalents are absolutely fine, but the code examples assume the following locally:
+- See [sand Architecture](./documentation/ARCHITECTURE_sand.md)
+- See [cannabis_test Architecture](./documentation/ARCHITECTURE_cannabis_test.md)
+- Add new pipelines at `./pipelines.js`
 
-- [VS Code Shell Commands](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line)
+## Other Tests
 
-Suggestions for instructions using other editors or OS's are welcome.
+`npm run test:skip` is a self contained test that will create screenshots of the skip to content action. 
+Set the paths and urls in skip-to-content.spec.js
 
-### Developing Tests
+## Developing Tests
 
-See [Playwright Testing](https://github.com/cagov/odi-engineering/blob/playwright-docs/playwright.md) and [Writing Unit Tests](https://github.com/cagov/design-system/blob/main/unit-tests.md#delays-for-visual-review) for advice and code examples. 
+- ODI's [Playwright Testing](https://github.com/cagov/odi-engineering/blob/playwright-docs/playwright.md) and [Writing Unit Tests](https://github.com/cagov/design-system/blob/main/unit-tests.md#delays-for-visual-review) have plenty of advice and code examples. 
 
-## Testing Pipeline Architecture:
+## Roadmap
 
-- See [Architecture](./documentation/ARCHITECTURE.md)
-
-
-### @todo
-
-- Verify tests work on Windows machines.
-- Add steps to delete content created via test.
+- See [Testing issues](https://github.com/cagov/odi-engineering/labels/Testing)

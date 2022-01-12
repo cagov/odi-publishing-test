@@ -6,6 +6,7 @@ const yyyy = today.getFullYear();
 today = `/${yyyy}/${mm}/${dd}`;
 
 // Set config object.
+// Do not include trailing slash.
 const pipelines = {
   sand: {
     urlEditing: 'https://dev-sand-ca-gov.pantheonsite.io',
@@ -13,13 +14,12 @@ const pipelines = {
     actionsLog: 'https://github.com/cagov/odi-publishing-11ty-sandbox/actions',
     postPrefix: '',
   },
-  cannabis: {
-    urlEditing: 'https://cannabis-ca-gov.lndo.site',
-    urlViewing: 'http://development.sand.ca.gov.s3-website-us-west-1.amazonaws.com',
-    actionsLog: 'https://github.com/cagov/odi-publishing-11ty-sandbox/actions',
-    postPrefix: today
+  cannabis_test: {
+    urlEditing: 'https://test-cannabis-ca-gov.pantheonsite.io',
+    urlViewing: 'http://test.cannabis.ca.gov.s3-website-us-west-1.amazonaws.com',
+    actionsLog: 'https://github.com/cagov/cannabis.ca.gov/actions',
+    postPrefix: today,
   },
 };
-
 
 export default pipelines;
