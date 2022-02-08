@@ -9,16 +9,33 @@ Testing suite for the ODI Publishing system.
 - See [TESTING](./documentation/TESTING.md) for detailed information.
 
 
-## Testing Pipelines:
+## Test type 1. Pipelines
 
 - See [sand Architecture](./documentation/ARCHITECTURE_sand.md)
 - See [cannabis_test Architecture](./documentation/ARCHITECTURE_cannabis_test.md)
 - Add new pipelines at `./pipelines.js`
 
-## Other Tests
 
-`npm run test:skip` is a self contained test that will create screenshots of the skip to content action. 
-Set the paths and urls in skip-to-content.spec.js
+## Test type 2. Skip to content
+
+A self contained test that will create screenshots of the skip to content action. 
+
+**Base command:** 
+
+`npm run test:skip`  
+
+**Parameters**
+
+|   parameter   | Possible values   | Default value|
+| ------------ | ---------------- |----|
+| site | `cannabis`, `drought`, or `designSystem` | undefined
+| port   | number               | 8080
+| url         | url | `http://localhost:`
+
+**Examples**
+
+`npm run test:skip --site=cannabis -port=8081` Test cannabis paths at http://localhost:8081
+
 
 ## Developing Tests
 

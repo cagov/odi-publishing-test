@@ -9,7 +9,7 @@
     "test:menus": "playwright test playwright-tests/menus.spec.js",
     "test:menus:headed": "playwright test --headed  playwright-tests/menus.spec.js",
     "test:posts": "playwright test playwright-tests/posts.spec.js",
-    "test:skip": "playwright test playwright-tests/skip-to-content.spec.js"
+    "test:skip": "NODE_ENV=$npm_config_site NODE_ENV=$npm_config_port NODE_ENV=$npm_config_url playwright test playwright-tests/skip-to-content.spec.js"
   },
   "eslintConfig": {
     "extends": [
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@open-wc/eslint-config": "^4.3.0",
-    "eslint": "^8.5.0",
+    "eslint": "^7.32.0",
     "prettier": "^2.4.1",
     "prettier-eslint": "^8.2.2"
   }
